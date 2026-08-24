@@ -1,0 +1,44 @@
+﻿[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Arial,72,&H00FFFFFF&,&H00FFFFFF&,&H00000000&,&H00000000&,-1,0,0,0,100,100,0,0,1,4,2,2,40,40,360,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, Effect, Text
+
+Dialogue: 0,0:00:00.00,0:00:01.19,Default,,0,0,0,Itu tuh {\c&H0000FFFF&\b1}DIMULAI{\c&H00FFFFFF&\b0}\Ndari situ.
+Dialogue: 0,0:00:01.19,0:00:02.32,Default,,0,0,0,{\c&H0000FFFF&\b1}KENAPA{\c&H00FFFFFF&\b0} ya? {\c&H0000FFFF&\b1}KENAPA{\c&H00FFFFFF&\b0}\Nbegitu?
+Dialogue: 0,0:00:02.32,0:00:03.00,Default,,0,0,0,{\c&H0000FFFF&\b1}KENAPA{\c&H00FFFFFF&\b0} begitu?
+Dialogue: 0,0:00:03.00,0:00:04.07,Default,,0,0,0,Dan itu {\c&H0000FFFF&\b1}DIBIASAKAN.{\c&H00FFFFFF&\b0}
+Dialogue: 0,0:00:04.07,0:00:06.20,Default,,0,0,0,Setiap kali {\c&H0000FFFF&\b1}NGOBROL{\c&H00FFFFFF&\b0}\Nsama orang, {\c&H0000FFFF&\b1}KENAPA{\c&H00FFFFFF&\b0}
+Dialogue: 0,0:00:06.20,0:00:06.95,Default,,0,0,0,ya dia {\c&H0000FFFF&\b1}BEGITU?{\c&H00FFFFFF&\b0}
+Dialogue: 0,0:00:06.95,0:00:09.00,Default,,0,0,0,{\c&H0000FFFF&\b1}KENAPA{\c&H00FFFFFF&\b0} dia punya\N{\c&H0000FFFF&\b1}PRINSIP{\c&H00FFFFFF&\b0} seperti itu?
+Dialogue: 0,0:00:09.00,0:00:09.75,Default,,0,0,0,Dan coba {\c&H0000FFFF&\b1}JAWAB.{\c&H00FFFFFF&\b0}
+Dialogue: 0,0:00:09.75,0:00:11.23,Default,,0,0,0,Coba atau {\c&H0000FFFF&\b1}TANYA{\c&H00FFFFFF&\b0}\Nke {\c&H0000FFFF&\b1}ORANG{\c&H00FFFFFF&\b0} yang
+Dialogue: 0,0:00:11.23,0:00:13.27,Default,,0,0,0,langsung. {\c&H0000FFFF&\b1}KENAPA{\c&H00FFFFFF&\b0} menurut\Nlo seperti itu?
+Dialogue: 0,0:00:13.27,0:00:14.00,Default,,0,0,0,{\c&H0000FFFF&\b1}KENAPA?{\c&H00FFFFFF&\b0} Kenapa?
+Dialogue: 0,0:00:14.00,0:00:15.40,Default,,0,0,0,Dari satu {\c&H0000FFFF&\b1}PERTANYAAN{\c&H00FFFFFF&\b0}\Nitu aja.
+Dialogue: 0,0:00:15.40,0:00:17.27,Default,,0,0,0,Tentar {\c&H0000FFFF&\b1}AKARNYA{\c&H00FFFFFF&\b0} tuh\Njadi {\c&H0000FFFF&\b1}BANYAK{\c&H00FFFFFF&\b0} banget
+Dialogue: 0,0:00:17.27,0:00:20.18,Default,,0,0,0,{\c&H0000FFFF&\b1}INFORMASI-INFORMASI{\c&H00FFFFFF&\b0} yang kalau\Nkita {\c&H0000FFFF&\b1}NGOMONG-NGOMONG{\c&H00FFFFFF&\b0} doang
+Dialogue: 0,0:00:20.18,0:00:21.00,Default,,0,0,0,nih {\c&H0000FFFF&\b1}YEPING{\c&H00FFFFFF&\b0} doang.
+Dialogue: 0,0:00:21.00,0:00:23.82,Default,,0,0,0,{\c&H0000FFFF&\b1}TERNYATA{\c&H00FFFFFF&\b0} itu punya\Nbanyak {\c&H0000FFFF&\b1}NUTRISINYA{\c&H00FFFFFF&\b0} loh
+Dialogue: 0,0:00:23.82,0:00:25.51,Default,,0,0,0,kalau {\c&H0000FFFF&\b1}MISALKAN{\c&H00FFFFFF&\b0} kita\Ngali.
+Dialogue: 0,0:00:25.51,0:00:27.60,Default,,0,0,0,Nah itu. Dan\Nitu harus {\c&H0000FFFF&\b1}DIJADIKAN{\c&H00FFFFFF&\b0}
+Dialogue: 0,0:00:27.60,0:00:28.00,Default,,0,0,0,{\c&H0000FFFF&\b1}HABIT.{\c&H00FFFFFF&\b0}
+Dialogue: 0,0:00:28.00,0:00:29.72,Default,,0,0,0,Karena {\c&H0000FFFF&\b1}KADANG{\c&H00FFFFFF&\b0} kita\N{\c&H0000FFFF&\b1}NGOBROL{\c&H00FFFFFF&\b0} cuma kayak
+Dialogue: 0,0:00:29.72,0:00:32.25,Default,,0,0,0,{\c&H0000FFFF&\b1}SURVEY-SURVEY{\c&H00FFFFFF&\b0} saya gitu\Nkan {\c&H0000FFFF&\b1}RINGAN-RINGAN-RINGAN{\c&H00FFFFFF&\b0} karena
+Dialogue: 0,0:00:32.25,0:00:33.00,Default,,0,0,0,kita {\c&H0000FFFF&\b1}MALES{\c&H00FFFFFF&\b0} mikir.
+Dialogue: 0,0:00:33.00,0:00:34.28,Default,,0,0,0,Tapi coba deh.
+Dialogue: 0,0:00:34.28,0:00:37.55,Default,,0,0,0,Have a {\c&H0000FFFF&\b1}MENTALITY{\c&H00FFFFFF&\b0}\Ndimana lo {\c&H0000FFFF&\b1}SELALU{\c&H00FFFFFF&\b0}
+Dialogue: 0,0:00:37.55,0:00:40.00,Default,,0,0,0,{\c&H0000FFFF&\b1}INGIN{\c&H00FFFFFF&\b0} tau lebih\Ndari situ.
+Dialogue: 0,0:00:40.00,0:00:41.04,Default,,0,0,0,Dan itu tuh\N{\c&H0000FFFF&\b1}HABIT.{\c&H00FFFFFF&\b0}
+Dialogue: 0,0:00:41.04,0:00:43.19,Default,,0,0,0,Bukan {\c&H0000FFFF&\b1}KARAKTER.{\c&H00FFFFFF&\b0} Ya\Ngue {\c&H0000FFFF&\b1}ORANGNYA{\c&H00FFFFFF&\b0} gak
+Dialogue: 0,0:00:43.19,0:00:44.00,Default,,0,0,0,mau {\c&H0000FFFF&\b1}TAUAN{\c&H00FFFFFF&\b0} sih.
+Dialogue: 0,0:00:44.00,0:00:46.51,Default,,0,0,0,Lu gak {\c&H0000FFFF&\b1}MEMBIASAKAN{\c&H00FFFFFF&\b0}\Ndiri lo untuk
+Dialogue: 0,0:00:46.51,0:00:49.58,Default,,0,0,0,mau tau. Jadi\N{\c&H0000FFFF&\b1}SE-DISCIPLINE{\c&H00FFFFFF&\b0} sama seperti
+Dialogue: 0,0:00:49.58,0:00:52.00,Default,,0,0,0,{\c&H0000FFFF&\b1}AKTIVITAS{\c&H00FFFFFF&\b0} akitas kita\N{\c&H0000FFFF&\b1}LAINNYA.{\c&H00FFFFFF&\b0}

@@ -1,0 +1,35 @@
+[
+  {
+    "start": 4.0,
+    "end": 35.0,
+    "duration": 31.0,
+    "start_segment": 1,
+    "end_segment": 6,
+    "title": "",
+    "hook": "",
+    "score": "",
+    "reason": "The clip starts with a strong hook and contains a complete thought about critical thinking as a form of discipline, making it a natural standalone short."
+  },
+  {
+    "start": 54.0,
+    "end": 82.0,
+    "duration": 28.0,
+    "start_segment": 10,
+    "end_segment": 14,
+    "title": "",
+    "hook": "",
+    "score": "",
+    "reason": "The chosen segment covers the speaker's thoughts on curiosity and its benefits, making a strong hook and containing useful information."
+  },
+  {
+    "start": 94.0,
+    "end": 161.0,
+    "duration": 67.0,
+    "start_segment": 17,
+    "end_segment": 32,
+    "title": "",
+    "hook": "",
+    "score": "",
+    "reason": "The chosen segment contains a complete thought about reading habits and their impact, making it a strong hook and useful information."
+  }
+]

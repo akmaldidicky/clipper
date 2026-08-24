@@ -1,0 +1,32 @@
+﻿[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Arial,72,&H00FFFFFF&,&H00FFFFFF&,&H00000000&,&H00000000&,-1,0,0,0,100,100,0,0,1,4,2,2,40,40,360,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, Effect, Text
+
+Dialogue: 0,0:00:00.00,0:00:01.66,Default,,0,0,0,{\c&H0000FFFF&\b1}KRITIS{\c&H00FFFFFF&\b0} itu adalah\N{\c&H0000FFFF&\b1}DISIPLIN.{\c&H00FFFFFF&\b0}
+Dialogue: 0,0:00:01.66,0:00:03.90,Default,,0,0,0,{\c&H0000FFFF&\b1}MENURUT{\c&H00FFFFFF&\b0} gue sama\Nseperti lo {\c&H0000FFFF&\b1}DISIPLIN{\c&H00FFFFFF&\b0}
+Dialogue: 0,0:00:03.90,0:00:06.00,Default,,0,0,0,menyimpan {\c&H0000FFFF&\b1}UANG{\c&H00FFFFFF&\b0} lo\Nsetiap {\c&H0000FFFF&\b1}BULANNYA.{\c&H00FFFFFF&\b0}
+Dialogue: 0,0:00:06.00,0:00:08.77,Default,,0,0,0,Sama seperti {\c&H0000FFFF&\b1}DISIPLIN{\c&H00FFFFFF&\b0}\Nlo {\c&H0000FFFF&\b1}SETIAP{\c&H00FFFFFF&\b0} pagi
+Dialogue: 0,0:00:08.77,0:00:11.00,Default,,0,0,0,{\c&H0000FFFF&\b1}BANGUN{\c&H00FFFFFF&\b0} lo {\c&H0000FFFF&\b1}BERESIN{\c&H00FFFFFF&\b0}\Nitu kasur lo.
+Dialogue: 0,0:00:11.00,0:00:13.46,Default,,0,0,0,{\c&H0000FFFF&\b1}DISIPLINNYA{\c&H00FFFFFF&\b0} kayak {\c&H0000FFFF&\b1}GIMANA{\c&H00FFFFFF&\b0}\Nsih kalau orang
+Dialogue: 0,0:00:13.46,0:00:16.00,Default,,0,0,0,{\c&H0000FFFF&\b1}KRITIS.{\c&H00FFFFFF&\b0} Menurut gue\N{\c&H0000FFFF&\b1}PERTANYAKAN{\c&H00FFFFFF&\b0} segala hal.
+Dialogue: 0,0:00:16.00,0:00:18.68,Default,,0,0,0,{\c&H0000FFFF&\b1}APAPUN{\c&H00FFFFFF&\b0} yang {\c&H0000FFFF&\b1}KALIAN{\c&H00FFFFFF&\b0}\Nlihat, kalian dengar,
+Dialogue: 0,0:00:18.68,0:00:21.11,Default,,0,0,0,{\c&H0000FFFF&\b1}KALIAN{\c&H00FFFFFF&\b0} masuk kota\N{\c&H0000FFFF&\b1}KALIAN{\c&H00FFFFFF&\b0} itu kalian
+Dialogue: 0,0:00:21.11,0:00:22.00,Default,,0,0,0,{\c&H0000FFFF&\b1}PERTANYAKAN.{\c&H00FFFFFF&\b0}
+Dialogue: 0,0:00:22.00,0:00:23.04,Default,,0,0,0,{\c&H0000FFFF&\b1}BENER{\c&H00FFFFFF&\b0} gak sih\Nini?
+Dialogue: 0,0:00:23.04,0:00:24.84,Default,,0,0,0,{\c&H0000FFFF&\b1}KENAPA{\c&H00FFFFFF&\b0} begitu? {\c&H0000FFFF&\b1}KENAPA{\c&H00FFFFFF&\b0}\Nbegitu?
+Dialogue: 0,0:00:24.84,0:00:26.55,Default,,0,0,0,{\c&H0000FFFF&\b1}START{\c&H00FFFFFF&\b0} dari satu\Nkata aja tuh
+Dialogue: 0,0:00:26.55,0:00:27.00,Default,,0,0,0,{\c&H0000FFFF&\b1}KENAPA?{\c&H00FFFFFF&\b0}
+Dialogue: 0,0:00:27.00,0:00:30.20,Default,,0,0,0,Misalkan kayak lagi\N{\c&H0000FFFF&\b1}BELAJAR{\c&H00FFFFFF&\b0} tentang {\c&H0000FFFF&\b1}PENJAJAHAN{\c&H00FFFFFF&\b0}
+Dialogue: 0,0:00:30.20,0:00:32.00,Default,,0,0,0,jaman {\c&H0000FFFF&\b1}BELANDA{\c&H00FFFFFF&\b0} di\N{\c&H0000FFFF&\b1}INDONESIA.{\c&H00FFFFFF&\b0}
+Dialogue: 0,0:00:32.00,0:00:34.70,Default,,0,0,0,{\c&H0000FFFF&\b1}KENAPA{\c&H00FFFFFF&\b0} ya {\c&H0000FFFF&\b1}BELANDA{\c&H00FFFFFF&\b0}\Nmenjajah kita?
+Dialogue: 0,0:00:34.70,0:00:37.10,Default,,0,0,0,{\c&H0000FFFF&\b1}KENAPA{\c&H00FFFFFF&\b0} ya kok\N{\c&H0000FFFF&\b1}RAKYAT{\c&H00FFFFFF&\b0} kita gak
+Dialogue: 0,0:00:37.10,0:00:40.00,Default,,0,0,0,ada {\c&H0000FFFF&\b1}DUITNYA{\c&H00FFFFFF&\b0} gitu\Nkayak {\c&H0000FFFF&\b1}DIPERBUDAK.{\c&H00FFFFFF&\b0}
