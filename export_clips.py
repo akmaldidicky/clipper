@@ -13,7 +13,7 @@ from pathlib import Path
 # ============================================================
 
 INPUT_VIDEO = Path(
-    "input\video.mp4"
+    "input\ideo.mp4"
 )
 
 INPUT_CLIPS = Path(

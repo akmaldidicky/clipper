@@ -1,9 +1,10 @@
 # ============================================================
-# 🔥 FINALIZE CLIPS V1
-# AI Scored Candidates → Final Clips
+# 🔥 FINALIZE CLIPS V2
+# AI Scored Candidates → Smart Final Clips
 # ============================================================
 
 import json
+import requests
 from pathlib import Path
 
 
@@ -19,28 +20,41 @@ OUTPUT_FILE = Path(
     "analysis/final_clips.json"
 )
 
-# Minimal score yang boleh masuk final.
+OLLAMA_URL = (
+    "http://localhost:11434/api/generate"
+)
+
+MODEL = "qwen2.5:3b"
+
 MIN_SCORE = 70
 
-# Maksimal jumlah clip final.
 MAX_FINAL_CLIPS = 5
 
-# Jika overlap lebih besar dari ini,
-# dianggap terlalu mirip secara timestamp.
-OVERLAP_THRESHOLD = 0.50
+TIMESTAMP_OVERLAP_THRESHOLD = 0.50
+
+SEMANTIC_SIMILARITY_THRESHOLD = 0.75
+
+AI_TIMEOUT = 120
 
 
 # ============================================================
 # HELPERS
 # ============================================================
 
+def get_analysis(candidate):
+
+    return candidate.get(
+        "ai_analysis",
+        {}
+    )
+
+
 def get_score(candidate):
 
     try:
 
         return float(
-            candidate
-            .get("ai_analysis", {})
+            get_analysis(candidate)
             .get("score", 0)
         )
 
@@ -52,18 +66,19 @@ def get_score(candidate):
 def get_decision(candidate):
 
     return (
-        candidate
-        .get("ai_analysis", {})
-        .get("decision", "REJECT")
+        get_analysis(candidate)
+        .get(
+            "decision",
+            "REJECT"
+        )
         .upper()
     )
 
 
 def get_start(candidate):
 
-    analysis = candidate.get(
-        "ai_analysis",
-        {}
+    analysis = get_analysis(
+        candidate
     )
 
     try:
@@ -84,9 +99,8 @@ def get_start(candidate):
 
 def get_end(candidate):
 
-    analysis = candidate.get(
-        "ai_analysis",
-        {}
+    analysis = get_analysis(
+        candidate
     )
 
     try:
@@ -107,21 +121,37 @@ def get_end(candidate):
 
 def get_title(candidate):
 
-    return (
+    return get_analysis(
         candidate
-        .get("ai_analysis", {})
-        .get("title", "")
+    ).get(
+        "title",
+        ""
     )
 
 
 def get_idea(candidate):
 
-    return (
+    return get_analysis(
         candidate
-        .get("ai_analysis", {})
-        .get("main_idea", "")
+    ).get(
+        "main_idea",
+        ""
     )
 
+
+def get_text(candidate):
+
+    text = candidate.get(
+        "text",
+        ""
+    )
+
+    return text
+
+
+# ============================================================
+# TIMESTAMP OVERLAP
+# ============================================================
 
 def overlap_ratio(
     a_start,
@@ -137,8 +167,13 @@ def overlap_ratio(
         max(a_start, b_start)
     )
 
-    duration_a = a_end - a_start
-    duration_b = b_end - b_start
+    duration_a = (
+        a_end - a_start
+    )
+
+    duration_b = (
+        b_end - b_start
+    )
 
     if duration_a <= 0:
         return 0
@@ -146,7 +181,7 @@ def overlap_ratio(
     if duration_b <= 0:
         return 0
 
-    smaller_duration = min(
+    smaller = min(
         duration_a,
         duration_b
     )
@@ -154,8 +189,127 @@ def overlap_ratio(
     return (
         intersection
         /
-        smaller_duration
+        smaller
     )
+
+
+# ============================================================
+# SEMANTIC SIMILARITY
+# ============================================================
+
+def ask_qwen_similarity(
+    candidate_a,
+    candidate_b
+):
+
+    text_a = get_text(
+        candidate_a
+    )
+
+    text_b = get_text(
+        candidate_b
+    )
+
+    prompt = f"""
+Kamu adalah editor video Shorts.
+
+Bandingkan dua kandidat clip berikut.
+
+Tentukan apakah keduanya membahas
+IDE UTAMA yang sama.
+
+CLIP A:
+
+{text_a}
+
+
+CLIP B:
+
+{text_b}
+
+
+PENTING:
+
+- Jangan menilai kualitas.
+- Jangan menilai durasi.
+- Jangan menilai siapa yang lebih bagus.
+- Hanya tentukan apakah topik/ide utama mereka sama.
+- Dua clip boleh memakai kata berbeda tetapi tetap
+  dianggap sama jika inti pembahasannya sama.
+- Jika hanya sedikit berhubungan tetapi memiliki
+  inti pembahasan berbeda, anggap berbeda.
+
+Berikan JSON saja:
+
+{{
+    "same_topic": false,
+    "score": 0.0
+}}
+
+Score:
+
+1.0 = hampir pasti ide yang sama
+0.8 = sangat mirip
+0.6 = cukup berhubungan
+0.4 = sedikit berhubungan
+0.0 = berbeda
+
+JSON ONLY.
+"""
+
+    try:
+
+        response = requests.post(
+
+            OLLAMA_URL,
+
+            json={
+                "model": MODEL,
+                "prompt": prompt,
+                "stream": False,
+                "format": "json",
+                "options": {
+                    "temperature": 0
+                }
+            },
+
+            timeout=AI_TIMEOUT
+        )
+
+        response.raise_for_status()
+
+        data = response.json()
+
+        result = json.loads(
+            data["response"]
+        )
+
+        score = float(
+            result.get(
+                "score",
+                0
+            )
+        )
+
+        same_topic = bool(
+            result.get(
+                "same_topic",
+                False
+            )
+        )
+
+        return same_topic, score
+
+    except Exception as e:
+
+        print(
+            f"   ⚠️ Semantic check error: "
+            f"{e}"
+        )
+
+        # Kalau Qwen gagal,
+        # jangan membuang kandidat.
+        return False, 0
 
 
 # ============================================================
@@ -179,11 +333,13 @@ def load_candidates():
 
         data = json.load(f)
 
-    if not isinstance(data, list):
+    if not isinstance(
+        data,
+        list
+    ):
 
         raise ValueError(
-            "ai_scored_candidates.json "
-            "harus berupa list."
+            "Input harus berupa list."
         )
 
     return data
@@ -193,18 +349,32 @@ def load_candidates():
 # FILTER
 # ============================================================
 
-def filter_candidates(candidates):
+def filter_candidates(
+    candidates
+):
 
-    filtered = []
+    result = []
 
     for candidate in candidates:
+
+        decision = get_decision(
+            candidate
+        )
 
         score = get_score(
             candidate
         )
 
-        decision = get_decision(
+        start = get_start(
             candidate
+        )
+
+        end = get_end(
+            candidate
+        )
+
+        duration = (
+            end - start
         )
 
         if decision == "REJECT":
@@ -213,6 +383,44 @@ def filter_candidates(candidates):
         if score < MIN_SCORE:
             continue
 
+        if duration < 15:
+            continue
+
+        if duration > 180:
+            continue
+
+        if end <= start:
+            continue
+
+        result.append(
+            candidate
+        )
+
+    return result
+
+
+# ============================================================
+# RANKING
+# ============================================================
+
+def rank_candidates(
+    candidates
+):
+
+    """
+    Ranking utama berdasarkan AI score.
+
+    Jika score sama, prefer:
+    - clip lebih pendek
+    - lebih dekat ke 30-60 detik
+    """
+
+    def ranking_key(candidate):
+
+        score = get_score(
+            candidate
+        )
+
         start = get_start(
             candidate
         )
@@ -221,49 +429,42 @@ def filter_candidates(candidates):
             candidate
         )
 
-        if end <= start:
-            continue
-
-        duration = end - start
-
-        if duration < 15:
-            continue
-
-        if duration > 180:
-            continue
-
-        filtered.append(
-            candidate
+        duration = (
+            end - start
         )
 
-    return filtered
+        # Target ideal sekitar 45 detik.
+        duration_penalty = abs(
+            duration - 45
+        )
 
-
-# ============================================================
-# SORT
-# ============================================================
-
-def sort_candidates(candidates):
+        return (
+            score,
+            -duration_penalty,
+            -start
+        )
 
     return sorted(
         candidates,
-        key=lambda c: (
-            get_score(c),
-            get_end(c) - get_start(c)
-        ),
+        key=ranking_key,
         reverse=True
     )
 
 
 # ============================================================
-# SELECT FINAL
+# SMART SELECTION
 # ============================================================
 
-def select_final(candidates):
+def select_final(
+    candidates
+):
 
     selected = []
 
-    for candidate in candidates:
+    for index, candidate in enumerate(
+        candidates,
+        1
+    ):
 
         start = get_start(
             candidate
@@ -277,14 +478,10 @@ def select_final(candidates):
             candidate
         )
 
-        title = get_title(
-            candidate
-        )
-
         print()
 
         print(
-            f"Checking: "
+            f"[CHECK {index}] "
             f"{start:.1f}s → "
             f"{end:.1f}s "
             f"| {end - start:.1f}s "
@@ -303,29 +500,81 @@ def select_final(candidates):
                 existing
             )
 
+            # ------------------------------------------------
+            # TIMESTAMP CHECK
+            # ------------------------------------------------
+
             overlap = overlap_ratio(
+
                 start,
                 end,
+
                 existing_start,
                 existing_end
             )
 
-            if overlap >= OVERLAP_THRESHOLD:
+            print(
+                f"   Timestamp overlap: "
+                f"{overlap * 100:.0f}%"
+            )
+
+            if (
+                overlap
+                >= TIMESTAMP_OVERLAP_THRESHOLD
+            ):
 
                 print(
-                    f"   ⚠️ Overlap "
-                    f"{overlap * 100:.0f}%"
-                )
-
-                print(
-                    "   🗑️ SKIP"
+                    "   🗑️ DUPLICATE "
+                    "(timestamp)"
                 )
 
                 duplicate = True
 
                 break
 
+            # ------------------------------------------------
+            # SEMANTIC CHECK
+            # ------------------------------------------------
+
+            print(
+                "   🤖 Checking "
+                "semantic similarity..."
+            )
+
+            same_topic, semantic_score = (
+                ask_qwen_similarity(
+                    candidate,
+                    existing
+                )
+            )
+
+            print(
+                f"   Semantic score: "
+                f"{semantic_score:.2f}"
+            )
+
+            if (
+                same_topic
+                and
+                semantic_score
+                >= SEMANTIC_SIMILARITY_THRESHOLD
+            ):
+
+                print(
+                    "   🗑️ DUPLICATE "
+                    "(same topic)"
+                )
+
+                duplicate = True
+
+                break
+
+        # ----------------------------------------------------
+        # KEEP
+        # ----------------------------------------------------
+
         if duplicate:
+
             continue
 
         selected.append(
@@ -337,7 +586,8 @@ def select_final(candidates):
         )
 
         print(
-            f"   Title: {title}"
+            f"   Title: "
+            f"{get_title(candidate)}"
         )
 
         if len(selected) >= MAX_FINAL_CLIPS:
@@ -351,7 +601,9 @@ def select_final(candidates):
 # BUILD OUTPUT
 # ============================================================
 
-def build_output(selected):
+def build_output(
+    selected
+):
 
     final_clips = []
 
@@ -360,17 +612,16 @@ def build_output(selected):
         1
     ):
 
+        analysis = get_analysis(
+            candidate
+        )
+
         start = get_start(
             candidate
         )
 
         end = get_end(
             candidate
-        )
-
-        analysis = candidate.get(
-            "ai_analysis",
-            {}
         )
 
         final_clips.append({
@@ -434,7 +685,9 @@ def build_output(selected):
 # SAVE
 # ============================================================
 
-def save_output(final_clips):
+def save_output(
+    final_clips
+):
 
     OUTPUT_FILE.parent.mkdir(
         parents=True,
@@ -462,22 +715,39 @@ def save_output(final_clips):
 def main():
 
     print()
-    print("=" * 70)
-    print(
-        "🔥 CLIPPER MACHINE — FINALIZER V1"
-    )
+
     print("=" * 70)
 
     print(
-        f"Input  : {INPUT_FILE}"
+        "🔥 CLIPPER MACHINE — "
+        "FINALIZER V2"
+    )
+
+    print("=" * 70)
+
+    print(
+        f"Input     : "
+        f"{INPUT_FILE}"
     )
 
     print(
-        f"Min score : {MIN_SCORE}"
+        f"Model     : "
+        f"{MODEL}"
     )
 
     print(
-        f"Max clips : {MAX_FINAL_CLIPS}"
+        f"Min score : "
+        f"{MIN_SCORE}"
+    )
+
+    print(
+        f"Max clips : "
+        f"{MAX_FINAL_CLIPS}"
+    )
+
+    print(
+        f"Semantic threshold : "
+        f"{SEMANTIC_SIMILARITY_THRESHOLD}"
     )
 
     # --------------------------------------------------------
@@ -509,18 +779,19 @@ def main():
     if not filtered:
 
         print()
+
         print(
-            "❌ Tidak ada kandidat "
+            "❌ Tidak ada candidate "
             "yang memenuhi syarat."
         )
 
         return
 
     # --------------------------------------------------------
-    # SORT
+    # RANK
     # --------------------------------------------------------
 
-    sorted_candidates = sort_candidates(
+    ranked = rank_candidates(
         filtered
     )
 
@@ -529,16 +800,20 @@ def main():
     # --------------------------------------------------------
 
     selected = select_final(
-        sorted_candidates
+        ranked
     )
 
     # --------------------------------------------------------
-    # OUTPUT
+    # BUILD
     # --------------------------------------------------------
 
     final_clips = build_output(
         selected
     )
+
+    # --------------------------------------------------------
+    # SAVE
+    # --------------------------------------------------------
 
     save_output(
         final_clips
@@ -549,10 +824,13 @@ def main():
     # --------------------------------------------------------
 
     print()
+
     print("=" * 70)
+
     print(
         "🔥 FINAL CLIPS"
     )
+
     print("=" * 70)
 
     for clip in final_clips:
@@ -581,6 +859,7 @@ def main():
         )
 
     print()
+
     print("=" * 70)
 
     print(
