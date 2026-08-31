@@ -1,0 +1,37 @@
+# Mengabaikan format gambar tertentu
+*.png
+*.mp4
+*.jpg
+*.jpeg
+*.gif
+*.txt
+
+# Mengabaikan format video
+*.mp4
+*.mkv
+*.avi
+*.mov
+*.ass
+*.srt
+
+# ATAU mengabaikan seluruh folder media/assets
+# (ganti 'media/' dengan nama folder Anda)
+# caption/
+# clips/
+# covered/
+# FINAL/
+# input/
+# publish/
+# publish/queue/
+# publish/failed/
+# publish/uploaded/
+# subtitled/
+# temp_ass/
+# temp_srt/
+# temp_thumbnail_text/
+# thumbnails/
+# vertical/
+# assets/videos/
+
+echo "youtube/credentials.json"
+echo "youtube/token.json"

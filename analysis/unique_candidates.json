@@ -1,0 +1,84 @@
+[
+  {
+    "start": 8.0,
+    "end": 68.0,
+    "duration": 60.0,
+    "text": "Kritis itu adalah disiplin. Menurut gue sama seperti lo disiplin menyimpan uang lo setiap bulannya. Sama seperti disiplin lo setiap pagi bangun lo beresin itu kasur lo. Disiplinnya kayak gimana sih kalau orang kritis. Menurut gue pertanyakan segala hal. Apapun yang kalian lihat, kalian dengar, kalian masuk kota kalian itu kalian pertanyakan. Bener gak sih ini? Kenapa begitu? Kenapa begitu? Start dari satu kata aja tuh kenapa? Misalkan kayak lagi belajar tentang penjajahan jaman Belanda di Indonesia. Kenapa ya Belanda menjajah kita? Kenapa ya kok rakyat kita gak ada duitnya gitu kayak diperbudak. Padahal jangan deh terlalu politik. Padahal Belanda kasih duit. Itu tuh dimulai dari situ. Kenapa ya? Kenapa begitu? Kenapa begitu? Dan itu dibiasakan. Setiap kali ngobrol sama orang, kenapa ya dia begitu? Kenapa dia punya prinsip seperti itu? Dan coba jawab. Coba atau tanya ke orang yang langsung. Kenapa menurut lo seperti itu? Kenapa? Kenapa?",
+    "ai_analysis": {
+      "decision": "WEAK",
+      "recommended_start": 8.0,
+      "recommended_end": 68.0,
+      "score": 40,
+      "main_idea": "The importance of being critical and questioning everything.",
+      "hook": "Kritis itu adalah disiplin. Menurut gue sama seperti lo disiplin menyimpan uang lo setiap bulannya. Sama seperti disiplin lo setiap pagi bangun lo beresin itu kasur lo. Disiplinnya kayak gimana sih kalau orang kritis. Menurut gue pertanyakan segala hal. Apapun yang kalian lihat, kalian dengar, kalian masuk kota kalian itu kalian pertanyakan. Bener gak sih ini? Kenapa begitu? Kenapa begitu? Start dari satu kata aja tuh kenapa? Misalkan kayak lagi belajar tentang penjajahan jaman Belanda di Indonesia. Kenapa ya Belanda menjajak kita? Kenapa ya kok rakyat kita gak ada duitnya gitu kayak diperbudak. Padahal jangan deh terlalu politik. Padahal Belanda kasih duit. Itu tuh dimulai dari situ. Kenapa ya? Kenapa begitu? Kenapa begitu? Dan itu dibiasakan. Setiap kali ngobrol sama orang, kenapa ya dia begitu? Kenapa dia punya prinsip seperti itu? Dan coba jawab. Coba atau tanya ke orang yang langsung. Kenapa menurut lo seperti itu? Kenapa? Kenapa?",
+      "payoff": "",
+      "title": "Kritis dan Pertanyaan",
+      "reason": "Segment ini terlalu panjang dan kompleks, mencoba mengekstrak banyak topik dari satu paragraf. Ini membuatnya sulit untuk diproses dalam waktu pendek dan tidak memiliki hook atau payoff yang jelas. Segment ini juga berisi banyak pertanyaan yang tidak ditangani dengan baik.",
+      "problems": [
+        "Segment terlalu panjang dan kompleks",
+        "Tidak memiliki hook yang kuat",
+        "Tidak memiliki payoff atau insight yang jelas",
+        "Berisi banyak pertanyaan yang tidak ditangani dengan baik"
+      ],
+      "strengths": [
+        "Menggunakan analogi kritis sebagai disiplin",
+        "Mencoba menghubungkan topik penjajahan Belanda dengan kritik",
+        "Menggunakan pertanyaan sebagai alat untuk membangun ide"
+      ]
+    },
+    "rank": 1
+  },
+  {
+    "start": 57.0,
+    "end": 116.0,
+    "duration": 59.0,
+    "text": "Dan itu dibiasakan. Setiap kali ngobrol sama orang, kenapa ya dia begitu? Kenapa dia punya prinsip seperti itu? Dan coba jawab. Coba atau tanya ke orang yang langsung. Kenapa menurut lo seperti itu? Kenapa? Kenapa? Dari satu pertanyaan itu aja. Tentar akarnya tuh jadi banyak banget informasi-informasi yang kalau kita ngomong-ngomong doang nih yeping doang. Ternyata itu punya banyak nutrisinya loh kalau misalkan kita gali. Nah itu. Dan itu harus dijadikan habit. Karena kadang kita ngobrol cuma kayak survey-survey saya gitu kan ringan-ringan-ringan karena kita males mikir. Tapi coba deh. Have a mentality dimana lo selalu ingin tau lebih dari situ. Dan itu tuh habit. Bukan karakter. Ya gue orangnya gak mau tauan sih. Lu gak membiasakan diri lo untuk mau tau. Jadi se-discipline sama seperti aktivitas akitas kita lainnya. Tapi lo baca buku? Baca. Baca. Dua buku favorit. Buku favorit. Jujur. Dua buku favorit. Pertama homodeus.",
+    "ai_analysis": {
+      "decision": "WEAK",
+      "recommended_start": 57.0,
+      "recommended_end": 116.0,
+      "score": 40,
+      "main_idea": "The importance of asking why and seeking deeper understanding in conversations.",
+      "hook": "Setiap kali ngobrol sama orang, kenapa ya dia begitu? Kenapa dia punya prinsip seperti itu?",
+      "payoff": "Dan itu harus dijadikan habit. Karena kadang kita ngobrol cuma kayak survey-survey saya gitu kan ringan-ringan-ringan karena kita males mikir.",
+      "title": "Membiasakan Mengajukan Pertanyaan",
+      "reason": "Clip ini terlalu panjang dan berisi banyak informasi yang tidak berkaitan. Ada beberapa topik yang tidak terkait dengan satu ide utama. Pengantar yang terlalu panjang dan tidak menarik.",
+      "problems": [
+        "Berisi banyak topik yang tidak terkait",
+        "Mulai terlalu awal dengan konteks yang tidak menarik",
+        "Akhirnya tidak mencapai ide utama",
+        "Tidak menarik untuk diikuti tanpa melihat podcast lengkap",
+        "Berisi beberapa topik yang tidak terkait"
+      ],
+      "strengths": [
+        "Mengandung ide utama yang menarik",
+        "Mengajarkan pentingnya mengajukan pertanyaan"
+      ]
+    },
+    "rank": 3
+  },
+  {
+    "start": 98.0,
+    "end": 158.0,
+    "duration": 60.0,
+    "text": "Lu gak membiasakan diri lo untuk mau tau. Jadi se-discipline sama seperti aktivitas akitas kita lainnya. Tapi lo baca buku? Baca. Baca. Dua buku favorit. Buku favorit. Jujur. Dua buku favorit. Pertama homodeus. Nah itu kelasik sih kayak kelasik modern lah. Itu jaman Genzi tuh kayaknya suka banget. Yang kedua itu. Yang kedua itu. Ini juga ini banget sih. Apa namanya? Basic banget. Atomic habits. Itu udah bro. It's simple. Gampang banget di mengerti. Dan itu impactnya gede banget untuk lo kesaharian. Itu gampang banget. Itu buku. It feels easy. Untuk membaca buku yang gak terlalu banyak gitu. Lo baca sampe abis. Dan kemungkinan lo akan reconsider the things that you do in your life sih. Ya mind changing sih. Homodeus dan atomic habits.",
+    "ai_analysis": {
+      "decision": "WEAK",
+      "recommended_start": 98.0,
+      "recommended_end": 158.0,
+      "score": 40,
+      "main_idea": "The importance of reading books and the benefits of reading books like Homdeus and Atomic Habits.",
+      "hook": "Lu gak membiasakan diri lo untuk mau tau. Jadi se-discipline sama seperti aktivitas akitas kita lainnya.",
+      "payoff": "Dan kemungkinan lo akan reconsider the things that you do in your life sih. Ya mind changing sih.",
+      "title": "Importance of Reading and Changing Habits",
+      "reason": "The candidate contains multiple unrelated topics and does not develop a single main idea. It starts too early with unnecessary context and ends before the idea is complete. The text is also repetitive and lacks a clear conclusion.",
+      "problems": [
+        "Multiple unrelated topics",
+        "Starts too early with unnecessary context",
+        "Ends before the idea is complete"
+      ],
+      "strengths": []
+    },
+    "rank": 5
+  }
+]

@@ -1,0 +1,106 @@
+[
+  {
+    "start": 0.0,
+    "end": 43.0,
+    "duration": 43.0,
+    "text": "Kau yang paling setia, kau yang teristi mewah Kau yang aku cinta, cuma kau saja Dari semua pihak, aku yang juara Dari semua wanita, kau yang paling seciwa Denganmu semua air mata, menjadi tawa sukarya",
+    "scores": {
+      "duration": 10,
+      "hook": 2,
+      "emotion": 1,
+      "standalone": 10
+    },
+    "score": 23
+  },
+  {
+    "start": 18.0,
+    "end": 72.0,
+    "duration": 54.0,
+    "text": "Dari semua pihak, aku yang juara Dari semua wanita, kau yang paling seciwa Denganmu semua air mata, menjadi tawa sukarya Akan kau kau selalu ada, menemani dalam sukaruka Denganmu aku bahagia, denganmu semua ceria Janganlah kau berpaling dariku, karena kamu cuma satu untukku",
+    "scores": {
+      "duration": 8,
+      "hook": 4,
+      "emotion": 1,
+      "standalone": 10
+    },
+    "score": 23
+  },
+  {
+    "start": 113.0,
+    "end": 167.0,
+    "duration": 54.0,
+    "text": "Denganmu aku bahagia, denganmu semua ceria Janganlah kau berpaling dariku, karena kamu cuma satu untukku Kau satu-setunya, dan tak ada dua",
+    "scores": {
+      "duration": 8,
+      "hook": 2,
+      "emotion": 1,
+      "standalone": 10
+    },
+    "score": 21
+  },
+  {
+    "start": 61.0,
+    "end": 113.0,
+    "duration": 52.0,
+    "text": "Janganlah kau berpaling dariku, karena kamu cuma satu untukku Kau satu-setunya, dan tak ada dua Apalagi tiga, cuma kau saja Denganmu semua air mata, menjadi tawa sukarya Akan kau kau selalu ada, menemani dalam sukaruka",
+    "scores": {
+      "duration": 8,
+      "hook": 2,
+      "emotion": 0,
+      "standalone": 10
+    },
+    "score": 20
+  },
+  {
+    "start": 152.0,
+    "end": 209.0,
+    "duration": 57.0,
+    "text": "Kau satu-setunya, dan tak ada dua Apalagi tiga, cuma kau saja Dari semua pihak, aku yang juara Dari semua wanita, kau yang paling seciwa Denganmu semua air mata, menjadi tawa sukarya Akan kau kau selalu ada, menemani dalam sukaruka",
+    "scores": {
+      "duration": 8,
+      "hook": 2,
+      "emotion": 0,
+      "standalone": 10
+    },
+    "score": 20
+  },
+  {
+    "start": 96.0,
+    "end": 122.0,
+    "duration": 26.0,
+    "text": "Denganmu semua air mata, menjadi tawa sukarya Akan kau kau selalu ada, menemani dalam sukaruka Denganmu aku bahagia, denganmu semua ceria",
+    "scores": {
+      "duration": 8,
+      "hook": 0,
+      "emotion": 1,
+      "standalone": 10
+    },
+    "score": 19
+  },
+  {
+    "start": 244.0,
+    "end": 264.0,
+    "duration": 20.0,
+    "text": "Untukku Untukku Untukku",
+    "scores": {
+      "duration": 8,
+      "hook": 0,
+      "emotion": 0,
+      "standalone": 10
+    },
+    "score": 18
+  },
+  {
+    "start": 200.0,
+    "end": 256.0,
+    "duration": 56.0,
+    "text": "Akan kau kau selalu ada, menemani dalam sukaruka Denganmu aku bahagia, denganmu semua ceria Janganlah kau berpaling dariku, karena kamu cuma satu untukku Untukku Untukku Untukku",
+    "scores": {
+      "duration": 8,
+      "hook": 2,
+      "emotion": 1,
+      "standalone": 4
+    },
+    "score": 15
+  }
+]
